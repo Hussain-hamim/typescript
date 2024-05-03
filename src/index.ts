@@ -1,35 +1,30 @@
-//   js     vs    ts
-//number        any
-//string        unknown
-//boolean       never
-//null          enum
-//undefined     tuple
-//object
+//const small = 1;
+// const medium = 2;
+// const large = 3;
 
-// let sale: number = 123_456_789;
-// let course: string = "TypeScript";
-// let is_published: boolean = true;
-// //any
-// let level;
-// level = 1;
-// level = "a";
+//enum:
+//0, 1, 2
+enum Size {
+  Small,
+  medium,
+  large,
+}
+//1, 2, 3
+enum Size2 {
+  Small = 1,
+  medium,
+  large,
+}
+//S, M, L
+enum Size3 {
+  Small = "S",
+  Medium = "M",
+  Large = "L",
+}
 
-// function render(document: any) {
-//   console.log(document);
-// }
+const mySize: Size2 = Size2.medium;
 
-// //array
-// let numbers: number[] = [1, 2, 3];
-// let numbers2 = [1, 2, 3];
+console.log(mySize);
 
-// //intellisense
-// let numbers3: number[] = [];
-// numbers3.forEach((n) => n.toLocaleString);
-
-//tuple in ts: a type of fixed array where each element have a particular type.
-let users: [number, string] = [1, "Hussain"];
-//you can see the intellisense for every type after the dot
-users[0].toFixed;
-users[1].charCodeAt;
-
-users.push(1);
+//to run ts file type "tsc" in command line and then...
+//type "node dist/index.js"
