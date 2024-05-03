@@ -1,30 +1,7 @@
-//const small = 1;
-// const medium = 2;
-// const large = 3;
-
-//enum:
-//0, 1, 2
-enum Size {
-  Small,
-  medium,
-  large,
-}
-//1, 2, 3
-enum Size2 {
-  Small = 1,
-  medium,
-  large,
-}
-//S, M, L
-enum Size3 {
-  Small = "S",
-  Medium = "M",
-  Large = "L",
+function calculateTax(income: number, taxYear = 2022): number {
+  // let x;
+  if (taxYear < 2022) return income * 1.2;
+  return income * 1.3;
 }
 
-const mySize: Size2 = Size2.medium;
-
-console.log(mySize);
-
-//to run ts file type "tsc" in command line and then...
-//type "node dist/index.js"
+calculateTax(11_000);
