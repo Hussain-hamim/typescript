@@ -1,9 +1,11 @@
-let speed: number | null = null;
+// type assertions:
+let phone = document.getElementById("phone") as HTMLInputElement;
+let phone2 = <HTMLInputElement>document.getElementById("phone");
 
-let ride = {
-  // falsy: (undefined, null, '', false, 0)
-  // speed: speed !== null ? speed : 30,
+//after the period you can see the method for the input element:
+// we tell the compiler that we know more about the element.
+phone.value;
+phone2.value;
 
-  // Nullish coalescing operator(equal to line 5)
-  speed: speed ?? 30,
-};
+//HTMLElement
+//HTMLInputElement
