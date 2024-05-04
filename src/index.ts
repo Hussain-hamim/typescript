@@ -1,18 +1,11 @@
-let weight: number | string; //union type
-let weight2: number & string; //intersection type
+//literal type (exact. specific) value:
 
-type Draggable = {
-  drag: () => void;
-};
+let quantity: 50 | 100 = 50;
 
-type Resizable = {
-  resize: () => void;
-};
+type Quantity = 100 | 500;
+let quantity2: Quantity = 500;
 
-// intersection type with (&)
-type UIWidget = Draggable & Resizable;
+type Metric = "cm" | "inch";
 
-let textBox: UIWidget = {
-  drag() {},
-  resize() {},
-};
+// let metric: Metric = 'hussain';//error
+let metric2: Metric = "cm";
