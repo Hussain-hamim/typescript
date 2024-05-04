@@ -1,12 +1,6 @@
-//unknown type:
-
-function render(document: unknown) {
-  //Narrowing
-  if (typeof document === "string") {
-    document.toUpperCase();
-    console.log(document);
-  }
-  // document.move();
-  // document.fly();
+// the Never type:
+function reject(message: string): never {
+  throw new Error(message);
 }
-render("Hussain");
+reject("..."); //the next line is not reachable...
+console.log("Hello there");
