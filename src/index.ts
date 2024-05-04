@@ -1,4 +1,5 @@
-// Union
+// Union type
+//we can create union type with vertical bar(|)
 function kgToLbs(weight: number | string): number {
   // Narrowing
   if (typeof weight === "number") return weight * 2.2;
