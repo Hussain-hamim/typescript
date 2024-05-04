@@ -1,9 +1,18 @@
-// Union type
-//we can create union type with vertical bar(|)
-function kgToLbs(weight: number | string): number {
-  // Narrowing
-  if (typeof weight === "number") return weight * 2.2;
-  else return parseInt(weight) * 2.2;
-}
-kgToLbs(10);
-kgToLbs("10kg");
+let weight: number | string; //union type
+let weight2: number & string; //intersection type
+
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resize: () => void;
+};
+
+// intersection type with (&)
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag() {},
+  resize() {},
+};
