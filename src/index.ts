@@ -25,6 +25,7 @@ class Account {
   private calculateTax() {
     console.log("...");
   }
+
   getBalance(): number {
     return this._balance;
   }
