@@ -1,6 +1,17 @@
-// the Never type:
-function reject(message: string): never {
-  throw new Error(message);
+// classes in Typescript:
+class Account {
+  id: number;
+  owner: string;
+  balance: number;
+
+  constructor(id: number, owner: string, balance: number) {
+    this.id = id;
+    this.owner = owner;
+    this.balance = balance;
+  }
+
+  deposit(amount: number): void {
+    if (amount <= 0) throw new Error("Invalid amount");
+    this.balance += amount;
+  }
 }
-reject("..."); //the next line is not reachable...
-console.log("Hello there");

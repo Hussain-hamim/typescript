@@ -1,9 +1,14 @@
 "use strict";
-function render(document) {
-    if (typeof document === "string") {
-        console.log(document);
-        document.toUpperCase();
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error("Invalid amount");
+        this.balance += amount;
     }
 }
-render("Hussain");
 //# sourceMappingURL=index.js.map
