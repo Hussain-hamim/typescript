@@ -21,11 +21,15 @@ class Account {
 
   private calculateTax() {
     console.log("...");
-    console.log("...");
   }
 
-  getBalance(): number {
+  get balance(): number {
     return this._balance;
+  }
+
+  set balance(value: number) {
+    if (value < 0) throw new Error("Invalid value...");
+    this._balance = value;
   }
 }
 //deposit mean put mean in bank account and withdraw mean take out money from bank
@@ -37,7 +41,10 @@ account.deposit(100);
 // account.balance = -1;  ////can not access private properties
 
 //access the private property:
-console.log(account.getBalance());
+console.log(account.balance);
+
+account.balance = 1; //// with setter being implemented now we can access it
+console.log(account.balance);
 
 // account.calculateTax(); //can not access the private method here.
 
