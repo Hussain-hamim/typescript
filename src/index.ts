@@ -3,9 +3,6 @@ class Ride {
   //with static this property now belong to the class not the object(this)
   private static _activeRides: number = 0;
 
-  // static activeRides: number = 0;
-  // start(){this.activeRides++; }
-
   // start(){this.activeRides++; }
   // now replace (this) with class name
   start() {
@@ -24,7 +21,7 @@ class Ride {
 
 let ride1 = new Ride();
 ride1.start();
-
+//and will have only a single instance in memory
 let ride2 = new Ride();
 ride2.start();
 
