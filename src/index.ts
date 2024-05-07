@@ -6,7 +6,7 @@ class Person {
     return this.firstName + " " + this.lastName;
   }
 
-  walk() {
+  protected walk() {
     console.log("Walking...");
   }
 }
@@ -17,6 +17,8 @@ class Student extends Person {
   }
 
   takeTest() {
+    // can be inherited cuz it's 'protected'
+    this.walk();
     console.log("Taking a test...");
   }
 }
@@ -51,6 +53,10 @@ function printNames(people: Person[]) {
     console.log(person.fullName);
   }
 }
-
+////Class
 //// Open Closed Principle:
 //class should be Open for extension and Closed for modification.
+
+// Private and Protected members:
+//both are the same we can only access inside our class
+// but the difference is that protected member can be inherited
