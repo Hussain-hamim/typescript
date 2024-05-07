@@ -21,5 +21,14 @@ class Student extends Person {
   }
 }
 
-let student = new Student(1, "Hussain", "Hamim");
+// let student = new Student(1, "Hussain", "Hamim");
 // student.walk;
+
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor " + super.fullName;
+  }
+}
+
+let teacher = new Teacher("Hussain", "Hamim");
+console.log(teacher.fullName);
