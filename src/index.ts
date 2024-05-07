@@ -1,29 +1,25 @@
-//************Static Members:
-class Ride {
-  //with static this property now belong to the class not the object(this)
-  private static _activeRides: number = 0;
+////Inheritance:
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
 
-  // start(){this.activeRides++; }
-  // now replace (this) with class name
-  start() {
-    Ride._activeRides++;
+  get fullName() {
+    return this.firstName + " " + this.lastName;
   }
-  stop() {
-    Ride._activeRides--;
-  }
-  // when we make a property or method static they become part of the class and will have only a single instance in memory
-  static get activeRides() {
-    return Ride._activeRides;
+
+  walk() {
+    console.log("Walking...");
   }
 }
 
-// Ride.activeRides = 10; //it's readonly cuz it's static
+class Student extends Person {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
 
-let ride1 = new Ride();
-ride1.start();
-//and will have only a single instance in memory
-let ride2 = new Ride();
-ride2.start();
+  takeTest() {
+    console.log("Taking a test...");
+  }
+}
 
-// now the activeRides property live on class only not object cuz it's static
-console.log(Ride.activeRides);
+let student = new Student(1, "Hussain", "Hamim");
+// student.walk;
