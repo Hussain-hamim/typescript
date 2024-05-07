@@ -1,22 +1,33 @@
-// Abstract class and method:
-// abstract class mean it have to be extended by other
-abstract class Shape {
-  constructor(public color: string) {}
+////*****Interfaces: */
+//// Class: blueprints for creating objects.
+//// Interface: To Define the shape of the object.
 
-  //// the abstract method in abstract class do not have implementation.
-  abstract render(): void;
+//// base class:
+// abstract class Calender {
+//   constructor(public name: string) {}
+
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
+
+interface Calender {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
 }
 
-class Circle extends Shape {
-  constructor(public radius: string, color: string) {
-    super(color);
-  }
-
-  override render(): void {
-    console.log("rendering a circle...");
-  }
+interface CloudCalender extends Calender {
+  sync(): void;
 }
 
-//// it do not make sense
-// let shape = new Shape("red"); // cannot create instance of abstract class.
-// shape.render();
+// we use the implement keyword
+class GoogleCalender implements Calender {
+  constructor(public name: string) {}
+
+  addEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+  removeEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+}
