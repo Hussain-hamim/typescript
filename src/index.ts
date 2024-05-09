@@ -1,14 +1,16 @@
-function createCounter(initialCount: number) {
-  let count = initialCount;
+const input = prompt("what fruit do you like?");
+const css = "color: #ffffff";
 
-  return function () {
-    "use strict";
-    count += 1;
-    return count;
-  };
+switch (input) {
+  case "orange": {
+    const css = "color: #FFA500";
+    console.log("%orange!", css);
+    break;
+  }
+  case "lemon":
+    const css = "color: #FFFF00";
+    console.log("%yellow!", css);
+    break;
+  default:
+    console.log("no color for you");
 }
-
-const counter = createCounter(10);
-counter();
-counter();
-console.log(counter()); //log: 13
