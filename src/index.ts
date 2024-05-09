@@ -1,19 +1,14 @@
-function createUserManager() {
-  let user = null;
+function createCounter(initialCount: number) {
+  let count = initialCount;
 
-  return function (name: string) {
-    // "use strict";
-    user = { name, createdAt: Date.now() };
-    return user;
+  return function () {
+    "use strict";
+    count += 1;
+    return count;
   };
 }
 
-const createUser = createUserManager();
-
-let one = createUser("Hussain") === createUser("Hussain");
-let two = createUser("Hussain");
-// console.log(one);
-
-let obj = {};
-
-console.log(obj === obj);
+const counter = createCounter(10);
+counter();
+counter();
+console.log(counter()); //log: 13
