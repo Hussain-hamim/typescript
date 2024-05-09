@@ -1,33 +1,19 @@
-////*****Interfaces: */
-//// Class: blueprints for creating objects.
-//// Interface: To Define the shape of the object.
+function createUserManager() {
+  let user = null;
 
-//// base class:
-// abstract class Calender {
-//   constructor(public name: string) {}
-
-//   abstract addEvent(): void;
-//   abstract removeEvent(): void;
-// }
-
-interface Calender {
-  name: string;
-  addEvent(): void;
-  removeEvent(): void;
+  return function (name: string) {
+    // "use strict";
+    user = { name, createdAt: Date.now() };
+    return user;
+  };
 }
 
-interface CloudCalender extends Calender {
-  sync(): void;
-}
+const createUser = createUserManager();
 
-// we use the implement keyword
-class GoogleCalender implements Calender {
-  constructor(public name: string) {}
+let one = createUser("Hussain") === createUser("Hussain");
+let two = createUser("Hussain");
+// console.log(one);
 
-  addEvent(): void {
-    throw new Error("Method not implemented.");
-  }
-  removeEvent(): void {
-    throw new Error("Method not implemented.");
-  }
-}
+let obj = {};
+
+console.log(obj === obj);
