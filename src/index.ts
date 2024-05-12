@@ -8,6 +8,7 @@ echo(1);
 echo("a");
 
 /// constraints by object
+//(generic type parameter)
 function echo2<T extends { name: string }>(value: T) {
   return value;
 }
