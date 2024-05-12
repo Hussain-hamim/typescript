@@ -1,25 +1,25 @@
-///// generic function;
-function wrapInArray<T>(value: T) {
-  return [value];
-}
-let numbers = wrapInArray("A");
-let numbers2 = wrapInArray(1);
+//// https://mywebsite.com/users
+//// https://mywebsite.com/products
 
-// inside class
-class ArrayUtils {
-  wrapInArray2<T>(value: T) {
-    return [value];
-  }
+interface Result<T> {
+  data: T | null;
+  error: string | null;
 }
-let utils = new ArrayUtils();
-let numbers3 = utils.wrapInArray2(1);
-let numbers4 = utils.wrapInArray2("A");
 
-//make it static
-class ArrayUtils2 {
-  static wrapArray<T>(value: T) {
-    return [value];
-  }
+function fetch<T>(url: string): Result<T> {
+  return { data: null, error: null };
 }
-let numbers5 = ArrayUtils2.wrapArray(1);
-let numbers6 = ArrayUtils2.wrapArray("B");
+// fetch<Result>("www.mywebsite.com/users");
+
+interface User {
+  username: string;
+}
+
+interface Product {
+  title: string;
+}
+
+let result = fetch<User>("www.mywebsite.com/users");
+result.data;
+
+fetch<Product>("www.mywebsite.com/users");
