@@ -10,8 +10,8 @@ class Store<T> {
   add(obj: T): void {
     this._object.push(obj);
   }
-  // T is Product
-  // keyof => 'name' | 'price'
+  // if T is Product then
+  // keyof T => 'name' | 'price'
   find(property: keyof T, value: unknown): T | undefined {
     return this._object.find((obj) => obj[property] === value);
   }
