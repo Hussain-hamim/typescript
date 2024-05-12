@@ -1,25 +1,37 @@
-//// https://mywebsite.com/users
-//// https://mywebsite.com/products
+///// constraints:
 
-interface Result<T> {
-  data: T | null;
-  error: string | null;
+// constraints by types
+function echo<T extends number | string>(value: T) {
+  return value;
 }
+echo(1);
+echo("a");
 
-function fetch<T>(url: string): Result<T> {
-  return { data: null, error: null };
+/// constraints by object
+function echo2<T extends { name: string }>(value: T) {
+  return value;
 }
-// fetch<Result>("www.mywebsite.com/users");
+echo2({ name: "hussain" });
 
-interface User {
-  username: string;
+//// constraints by interface
+interface Person {
+  name: string;
+  age: number;
 }
-
-interface Product {
-  title: string;
+function echo3<T extends Person>(value: T) {
+  return value;
 }
+echo3({ name: "hamim", age: 22 });
+// echo3({ name: "hamim" });
 
-let result = fetch<User>("www.mywebsite.com/users");
-result.data;
-
-fetch<Product>("www.mywebsite.com/users");
+/// constraints by class
+class Person2 {
+  constructor(public name: string) {}
+}
+class Customer extends Person2 {}
+function echo4<T extends Person2>(value: T) {
+  return value;
+}
+echo4({ name: "hamim" });
+echo4(new Person2("hamim"));
+echo4(new Customer("afghan"));
