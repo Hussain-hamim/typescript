@@ -10,7 +10,19 @@ class Store<T> {
   add(obj: T): void {
     this._object.push(obj);
   }
+  // T is Product
+  // keyof => 'name' | 'price'
+  find(property: keyof T, value: unknown): T | undefined {
+    return this._object.find((obj) => obj[property] === value);
+  }
 }
+let store3 = new Store<Product>();
+store3.add({ name: "a", price: 1 });
+store3.find("name", "a");
+store3.find("name", 1);
+store3.find("price", 1);
+// store3.find("notExistingProperty", 1); // compile time error
+
 // let store = new Store<Product>();
 
 //// pass on the generic type parameter
