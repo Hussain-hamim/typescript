@@ -1,13 +1,19 @@
-// Required<Type>:
-// Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
+// Record<Keys, Type>:
+// Constructs an object type whose property keys are Keys and whose property values are Type.
+//This utility can be used to map the properties of a type to another type.
 
-interface Props {
-  a?: number;
-  b?: string;
+// Example:
+interface CatInfo {
+  age: number;
+  breed: string;
 }
 
-const obj: Props = { a: 5 };
+type CatName = "miffy" | "boris" | "mordred";
 
-// const obj2: Required<Props> = { a: 5 };
+const cats: Record<CatName, CatInfo> = {
+  miffy: { age: 10, breed: "Persian" },
+  boris: { age: 5, breed: "Maine Coon" },
+  mordred: { age: 16, breed: "British Shorthair" },
+};
 
-console.log(obj.a);
+cats.boris; // == const cats: Record<CatName, CatInfo>
