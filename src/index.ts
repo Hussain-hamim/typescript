@@ -1,18 +1,10 @@
-// 1. Convert the function below to a generic function:
-//  function echo(arg) { return arg; }
-
-function echo<T>(arg: T): T {
-  return arg;
+function Component(constructor: Function) {
+  console.log("component decorator called");
+  constructor.prototype.uniqueId = Date.now();
+  constructor.prototype.insertInDOM = () => {
+    console.log("inserting the component in the DOM");
+  };
 }
 
-// 2. When compiling the following piece of code, we get an error saying ‘Property name
-// does not exist on type T’. How can we solve this problem?
-// function printName<T>(obj: T) {
-// console.log(obj.name);
-// }
-
-function printName<T extends { name: string }>(obj: T) {
-  console.log(obj.name);
-}
-
-// 3.
+@Component
+class ProfileComponent {}
