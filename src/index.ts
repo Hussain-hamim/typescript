@@ -1,26 +1,20 @@
-type ComponentOptions = {
-  selector: string;
-};
-
-// Decorator factory
-function Component(options: ComponentOptions) {
-  return (constructor: Function) => {
-    console.log("component decorator called");
-    constructor.prototype.options = options;
-    constructor.prototype.uniqueId = Date.now();
-    constructor.prototype.insertInDOM = () => {
-      console.log("inserting the component in the DOM");
-    };
+function Log(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  const original = descriptor.value as Function;
+  // we can't use arrow function, when we redefine our method we use function declaration.
+  descriptor.value = function (...args: any) {
+    console.log("before");
+    original.call(this, "blue sky");
+    original.call(this, ...args);
+    console.log("after");
   };
 }
-
-function Pipe(constructor: Function) {
-  console.log("Pipe decorator called");
-  constructor.prototype.pipe = true;
+//oil, tomato, potato
+class Person {
+  @Log
+  say(message: string) {
+    console.log("person say " + message);
+  }
 }
 
-@Component({ selector: "#my-profile" })
-@Pipe
-//// reversed cuz of the math function
-// f(g(x))
-class ProfileComponent {}
+const person = new Person();
+person.say("Hello");
