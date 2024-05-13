@@ -1,25 +1,13 @@
-//// type mapping:
-interface Product {
-  name: string;
-  price: number;
+// Required<Type>:
+// Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
+
+interface Props {
+  a?: number;
+  b?: string;
 }
 
-type readOnlyProduct = {
-  //index signature, //keyof
-  readonly [K in keyof Product]: Product[K]; // type mapping
-};
+const obj: Props = { a: 5 };
 
-// this is generic not just for product:
-type Optional<T> = {
-  [K in keyof T]?: T[K];
-};
+// const obj2: Required<Props> = { a: 5 };
 
-type Nullable<T> = {
-  [K in keyof T]: T[K] | null;
-};
-
-let product: readOnlyProduct = {
-  name: "a",
-  price: 1,
-};
-// product.name = 'b'; //can not assign cuz it's readonly
+console.log(obj.a);
