@@ -1,19 +1,18 @@
-// Record<Keys, Type>:
-// Constructs an object type whose property keys are Keys and whose property values are Type.
-//This utility can be used to map the properties of a type to another type.
+// 1. Convert the function below to a generic function:
+//  function echo(arg) { return arg; }
 
-// Example:
-interface CatInfo {
-  age: number;
-  breed: string;
+function echo<T>(arg: T): T {
+  return arg;
 }
 
-type CatName = "miffy" | "boris" | "mordred";
+// 2. When compiling the following piece of code, we get an error saying ‘Property name
+// does not exist on type T’. How can we solve this problem?
+// function printName<T>(obj: T) {
+// console.log(obj.name);
+// }
 
-const cats: Record<CatName, CatInfo> = {
-  miffy: { age: 10, breed: "Persian" },
-  boris: { age: 5, breed: "Maine Coon" },
-  mordred: { age: 16, breed: "British Shorthair" },
-};
+function printName<T extends { name: string }>(obj: T) {
+  console.log(obj.name);
+}
 
-cats.boris; // == const cats: Record<CatName, CatInfo>
+// 3.
