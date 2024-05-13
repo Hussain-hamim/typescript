@@ -14,5 +14,13 @@ function Component(options: ComponentOptions) {
   };
 }
 
+function Pipe(constructor: Function) {
+  console.log("Pipe decorator called");
+  constructor.prototype.pipe = true;
+}
+
 @Component({ selector: "#my-profile" })
+@Pipe
+//// reversed cuz of the math function
+// f(g(x))
 class ProfileComponent {}
