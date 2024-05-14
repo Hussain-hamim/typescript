@@ -5,5 +5,5 @@ export enum Format {
   Compressed,
 }
 
-class Compressor {}
-class Encryptor {}
+// class Compressor {}
+// class Encryptor {}
