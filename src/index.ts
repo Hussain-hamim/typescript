@@ -1,34 +1,4 @@
-function MinLength(length: number) {
-  return (target: any, propertyName: string) => {
-    let value: string;
+import { Circle, Square } from "./shapes";
 
-    const descriptor: PropertyDescriptor = {
-      get() {
-        return value;
-      },
-
-      set(newValue: string) {
-        if (newValue.length < length)
-          throw new Error(
-            `${propertyName} should be at least ${length} characters!`
-          );
-        value = newValue;
-      },
-    };
-    Object.defineProperty(target, propertyName, descriptor);
-  };
-}
-
-class User {
-  @MinLength(5)
-  password: string;
-
-  constructor(password: string) {
-    this.password = password;
-  }
-}
-
-// let user = new User("1234");
-let user = new User("12345");
-// user.password = "12";
-console.log(user.password);
+let circle = new Circle(4);
+let square = new Square(4);
