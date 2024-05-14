@@ -1,29 +1,34 @@
-// decorating accessor/getter and setter:
-function Capitalize(
-  target: any,
-  methodName: string,
-  descriptor: PropertyDescriptor
-) {
-  const original = descriptor.get; // not value instead use GET
-  // to getter method here we can not give or spread parameters
-  descriptor.get = function () {
-    const result = original?.call(this);
-    //if(original !== null && original !== undefined) original.call(this);
+function MinLength(length: number) {
+  return (target: any, propertyName: string) => {
+    let value: string;
 
-    if (typeof result === "string") return result.toUpperCase();
-    return result;
-    // return (typeof result === 'string') ? result.toUpperCase() : result;
+    const descriptor: PropertyDescriptor = {
+      get() {
+        return value;
+      },
+
+      set(newValue: string) {
+        if (newValue.length < length)
+          throw new Error(
+            `${propertyName} should be at least ${length} characters!`
+          );
+        value = newValue;
+      },
+    };
+    Object.defineProperty(target, propertyName, descriptor);
   };
 }
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
 
-  @Capitalize
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-    // return 0;
-    // return null;
+class User {
+  @MinLength(5)
+  password: string;
+
+  constructor(password: string) {
+    this.password = password;
   }
 }
-let person = new Person("Hussain", "Hamim");
-console.log(person.fullName);
+
+// let user = new User("1234");
+let user = new User("12345");
+// user.password = "12";
+console.log(user.password);

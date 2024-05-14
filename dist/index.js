@@ -5,27 +5,57 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function Capitalize(target, methodName, descriptor) {
-    const original = descriptor.get;
-    descriptor.get = function () {
-        const result = original === null || original === void 0 ? void 0 : original.call(this);
-        if (typeof result === "string")
-            return result.toUpperCase();
-        return result;
+function MinLength(length) {
+    return (target, propertyName) => {
+        let value;
+        const descriptor = {
+            get() {
+                return value;
+            },
+            set(newValue) {
+                if (newValue.length < length)
+                    throw new Error(`${propertyName} should be at least ${length} characters!`);
+                value = newValue;
+            },
+        };
+        Object.defineProperty(target, propertyName, descriptor);
     };
 }
-class Person {
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
+class User {
+    constructor(password) {
+        this.password = password;
     }
 }
 __decorate([
-    Capitalize
-], Person.prototype, "fullName", null);
-let person = new Person("Hussain", "Hamim");
-console.log(person.fullName);
+    MinLength(5)
+], User.prototype, "password", void 0);
+let user = new User("12345");
+console.log(user.password);
+function Size(maxSize) {
+    return (target, propertyName) => {
+        let value;
+        const descriptor = {
+            get() {
+                return value;
+            },
+            set(newValue) {
+                if (newValue.length < maxSize) {
+                    throw new Error(`${propertyName} should be at least ${maxSize} characters long`);
+                }
+                value = newValue;
+            },
+        };
+        Object.defineProperty(target, propertyName, descriptor);
+    };
+}
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+__decorate([
+    Size(3)
+], Person.prototype, "name", void 0);
+let person = new Person("hsn");
+console.log(person.name);
 //# sourceMappingURL=index.js.map
