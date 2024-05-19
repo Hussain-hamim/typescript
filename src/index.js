@@ -9,18 +9,18 @@ console.log(mimsy);
 
 console.log(typeof null);
 
-// console.log(Number.MAX_SAFE_INTEGER);
-// console.log(Number.MIN_SAFE_INTEGER);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.MIN_SAFE_INTEGER);
 
-// console.log(Number.MAX_SAFE_INTEGER + 1);
-// console.log(Number.MAX_SAFE_INTEGER + 2);
-// console.log(Number.MAX_SAFE_INTEGER + 3);
-// console.log(Number.MAX_SAFE_INTEGER + 4);
-// console.log(Number.MAX_SAFE_INTEGER + 5);
+console.log(Number.MAX_SAFE_INTEGER + 1);
+console.log(Number.MAX_SAFE_INTEGER + 2);
+console.log(Number.MAX_SAFE_INTEGER + 3);
+console.log(Number.MAX_SAFE_INTEGER + 4);
+console.log(Number.MAX_SAFE_INTEGER + 5);
 
-// console.log(0.0 + 0.2 === 0.30000000000000004);
+console.log(0.0 + 0.2 === 0.30000000000000004);
 
-// console.log(1 / (-1 / 0));
+console.log(1 / (-1 / 0));
 
 // console.log(typeof (0 / 0));
 
