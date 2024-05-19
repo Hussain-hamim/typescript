@@ -1,13 +1,13 @@
-// // show the concept of an unintentionally missing value
+// show the concept of an unintentionally missing value
 
-// let bandersnatch;
-// console.log(bandersnatch);
+let bandersnatch;
+console.log(bandersnatch);
 
-// // null: used for intentionally missing value.
-// let mimsy = null;
-// console.log(mimsy);
+// null: used for intentionally missing value.
+let mimsy = null;
+console.log(mimsy);
 
-// console.log(typeof null);
+console.log(typeof null);
 
 // console.log(Number.MAX_SAFE_INTEGER);
 // console.log(Number.MIN_SAFE_INTEGER);
