@@ -47,15 +47,15 @@ junk = null;
 
 console.log(junk);
 
-// for (let i = 0; i < 7; i++) {
-//   console.log(function () {});
-// }
+for (let i = 0; i < 7; i++) {
+  console.log(function () {});
+}
 
-// let count = function () {
-//   return 7;
-// };
-// let c = count;
-// console.log(c);
+let count = function () {
+  return 7;
+};
+let c = count;
+console.log(c);
 
 // let a = "1";
 // let b = 1;
