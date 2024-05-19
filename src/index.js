@@ -22,13 +22,13 @@ console.log(0.0 + 0.2 === 0.30000000000000004);
 
 console.log(1 / (-1 / 0));
 
-// console.log(typeof (0 / 0));
+console.log(typeof (0 / 0));
 
-// console.log(typeof NaN);
+console.log(typeof NaN);
 
-// console.log(typeof "こんにちは"); // "string"
-// console.log(typeof "こんにちは"); // "string"
-// console.log(typeof `こんにちは`); // "string"
+console.log(typeof "こんにちは"); // "string"
+console.log(typeof "こんにちは"); // "string"
+console.log(typeof `こんにちは`); // "string"
 
 // let cat = "Cheshire";
 
