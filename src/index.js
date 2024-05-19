@@ -57,33 +57,33 @@ let count = function () {
 let c = count;
 console.log(c);
 
-// let a = "1";
-// let b = 1;
+let a = "1";
+let b = 1;
 
-// console.log(a === b);
-// console.log(a === b);
-// console.log(Object.is(a, b));
+console.log(a === b);
+console.log(a === b);
+console.log(Object.is(a, b));
 
-// const c = { a: "Hello" };
+const c = { a: "Hello" };
 
-// console.log(Object.is(c, c));
-// console.log(c == c);
+console.log(Object.is(c, c));
+console.log(c == c);
 
-// let dwarves = 7;
-// let continents = "7";
-// let worldWonders = 3 + 4;
+let dwarves = 7;
+let continents = "7";
+let worldWonders = 3 + 4;
 
-// console.log(Object.is(dwarves, worldWonders));
-// // console.log(dwarves === continents);
+console.log(Object.is(dwarves, worldWonders));
+// console.log(dwarves === continents);
 
-// let banana = { a: "Hussain" };
-// let cherry = banana;
-// let chocolate = cherry;
-// cherry = { b: "Hamim" };
+let banana = { a: "Hussain" };
+let cherry = banana;
+let chocolate = cherry;
+cherry = { b: "Hamim" };
 
-// console.log(Object.is(banana, cherry)); // false
-// console.log(Object.is(cherry, chocolate)); // false
-// console.log(Object.is(chocolate, banana)); // true
+console.log(Object.is(banana, cherry)); // false
+console.log(Object.is(cherry, chocolate)); // false
+console.log(Object.is(chocolate, banana)); // true
 
-// console.log(chocolate.a);
-// console.log(cherry.b);
+console.log(chocolate.a);
+console.log(cherry.b);
