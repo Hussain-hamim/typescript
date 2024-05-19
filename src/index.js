@@ -103,10 +103,20 @@
 // console.log(NaN === NaN); // false
 // console.log(-0 === 0); // true
 
-// case 1:
-let width = 0 / 0; // NaN
+// // case 1:
+// let width = 0 / 0; // NaN
 
-let height = width * 2; // NaN
+// let height = width * 2; // NaN
 
-console.log(width === height); // false
-console.log(Object.is(width, height)); // true
+// console.log(width === height); // false
+// console.log(Object.is(width, height)); // true
+
+function resizeImage(size) {
+  if (size === NaN) {
+    // This will never get logged: the check is always false!
+    console.log("Something is wrong.");
+  }
+  // ...
+}
+
+resizeImage(NaN);
