@@ -92,3 +92,21 @@
 // Strict Equality: a === b (triple equals).
 // Loose Equality: a == b (double equals).
 // Same Value Equality: Object.is(a, b) .
+
+// strictly equality:
+// console.log(2 === 2);
+// console.log({} === {});
+
+// strict value equality vs. same value equality:
+// both of them are the same in almost all cases
+// some exception:
+// console.log(NaN === NaN); // false
+// console.log(-0 === 0); // true
+
+// case 1:
+let width = 0 / 0; // NaN
+
+let height = width * 2; // NaN
+
+console.log(width === height); // false
+console.log(Object.is(width, height)); // true
