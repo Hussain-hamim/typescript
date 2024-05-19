@@ -143,23 +143,27 @@
 // }
 // strictEqual(2, 2);
 
-//////////////
-// Loose equality: ==
-// not so much common so it's best to avoid it.
+// //////////////
+// // Loose equality: ==
+// // not so much common so it's best to avoid it.
 
-console.log([[]] == "");
-console.log(true == [1]);
-console.log(false == [0]);
+// console.log([[]] == "");
+// console.log(true == [1]);
+// console.log(false == [0]);
 
-let x = null;
+// let x = null;
 
-// here even if the x is null or undefined it is the same
-if (x == null) {
-  console.log("hello there bro");
-}
+// // here even if the x is null or undefined it is the same
+// if (x == null) {
+//   console.log("hello there bro");
+// }
 
-let y = undefined;
-if (y == null) {
-  // (x === null || x === undefined)
-  console.log("Mmm awesome");
-}
+// let y = undefined;
+// if (y == null) {
+//   // (x === null || x === undefined)
+//   console.log("Mmm awesome");
+// }
+
+let x = 0 / 0;
+
+console.log(Number.isNaN(x));
