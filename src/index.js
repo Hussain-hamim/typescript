@@ -111,17 +111,25 @@
 // console.log(width === height); // false
 // console.log(Object.is(width, height)); // true
 
-function resizeImage(size) {
-  if (size !== size) {
-    // This will never get logged: the check is always false!
-    // but there are some solution like:
-    // Number.isNaN(size);
-    // object.is(size, NaN);
-    // size !== size;
-    console.log("Something is wrong.");
+// function resizeImage(size) {
+//   if (size !== size) {
+//     // This will never get logged: the check is always false!
+//     // but there are some solution like:
+//     // Number.isNaN(size);
+//     // object.is(size, NaN);
+//     // size !== size;
+//     console.log("Something is wrong.");
 
-    console.log(size !== size);
-  } else console.log("okey...");
-}
+//     console.log(size !== size);
+//   } else console.log("okey...");
+// }
 
-resizeImage(NaN);
+// resizeImage(NaN);
+
+// special case two: -0
+
+let width = 0;
+let height = -width;
+console.log(width === height); // true
+
+console.log(Object.is(width, height)); //false
