@@ -30,22 +30,22 @@ console.log(typeof "こんにちは"); // "string"
 console.log(typeof "こんにちは"); // "string"
 console.log(typeof `こんにちは`); // "string"
 
-// let cat = "Cheshire";
+let cat = "Cheshire";
 
-// console.log(cat.length);
-// console.log(cat[0]);
-// console.log(cat[1]);
+console.log(cat.length);
+console.log(cat[0]);
+console.log(cat[1]);
 
-// let answer = prompt("enter your name");
-// console.log(answer);
+let answer = prompt("enter your name");
+console.log(answer);
 
-// let alo = Symbol();
-// console.log(typeof alo);
+let alo = Symbol();
+console.log(typeof alo);
 
-// let junk = {};
-// junk = null;
+let junk = {};
+junk = null;
 
-// console.log(junk);
+console.log(junk);
 
 // for (let i = 0; i < 7; i++) {
 //   console.log(function () {});
