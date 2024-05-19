@@ -136,9 +136,30 @@
 
 ////////////////////
 
-function strictEqual(a, b) {
-  if (a === b) {
-    return console.log(a + b);
-  }
+// function strictEqual(a, b) {
+//   if (a === b) {
+//     return console.log(a + b);
+//   }
+// }
+// strictEqual(2, 2);
+
+//////////////
+// Loose equality: ==
+// not so much common so it's best to avoid it.
+
+console.log([[]] == "");
+console.log(true == [1]);
+console.log(false == [0]);
+
+let x = null;
+
+// here even if the x is null or undefined it is the same
+if (x == null) {
+  console.log("hello there bro");
 }
-strictEqual(2, 2);
+
+let y = undefined;
+if (y == null) {
+  // (x === null || x === undefined)
+  console.log("Mmm awesome");
+}
