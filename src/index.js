@@ -128,8 +128,17 @@
 
 // special case two: -0
 
-let width = 0;
-let height = -width;
-console.log(width === height); // true
+// let width = 0;
+// let height = -width;
+// console.log(width === height); // true
 
-console.log(Object.is(width, height)); //false
+// console.log(Object.is(width, height)); //false
+
+////////////////////
+
+function strictEqual(a, b) {
+  if (a === b) {
+    return console.log(a + b);
+  }
+}
+strictEqual(2, 2);
