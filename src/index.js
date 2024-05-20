@@ -13,9 +13,19 @@ let john = {
   age: sherlock.age,
 };
 
+// john.surname = "Lennon";
+// john.address.city = "Malibu";
+// john.age = 33;
+
+// possible solution: mutating another object
 john.surname = "Lennon";
-john.address.city = "Malibu";
-john.age = 33;
+john.address = { city: "Malibu" };
+
+// alternative solution: no object mutation
+john = {
+  surname: "Lennon",
+  address: { city: "Malibu" },
+};
 
 console.log(sherlock.surname);
 console.log(sherlock.address.city);
