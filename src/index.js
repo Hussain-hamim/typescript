@@ -21,3 +21,24 @@ console.log(human.tail);
 console.log(gwen.tail);
 
 // any javaScript may choose other object as prototype
+
+////// The prototype Chain:
+let mammal = {
+  brainy: true,
+};
+
+let person = {
+  __proto__: mammal,
+  teeth: 32,
+};
+let hussain = {
+  __proto__: person,
+  age: 22,
+};
+console.log(hussain.brainy);
+console.log(hussain.teeth);
+
+/**
+ * js will search for property on our object then on it's prototype
+ * then on that object's prototype and so on...
+ */
