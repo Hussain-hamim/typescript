@@ -42,3 +42,28 @@ console.log(hussain.teeth);
  * js will search for property on our object then on it's prototype
  * then on that object's prototype and so on...
  */
+
+// Shadowing:
+
+let human2 = {
+  teeth: 32,
+};
+
+let gwen2 = {
+  __proto__: human2,
+  teeth: 31,
+};
+
+let hussain2 = {
+  __proto__: gwen2,
+  //   teeth: 30,
+  age: 22,
+};
+
+console.log(human2.teeth);
+console.log(gwen2.teeth);
+console.log(hussain2.teeth);
+
+// hasOwnProperty: built-in js function for checking if property has it's own property wire
+console.log(gwen2.hasOwnProperty("teeth"));
+console.log(hussain2.hasOwnProperty("teeth"));
