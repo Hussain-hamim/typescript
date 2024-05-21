@@ -94,3 +94,50 @@ let weirdo = {
 // this object doesn't even have it's built-in object method anymore
 console.log(weirdo.hasOwnProperty);
 console.log(weirdo.toString);
+
+// polluting the prototype:
+let obj = {};
+// now all objects prototype have this property smell
+obj.__proto__.smell = "banana";
+
+console.log(hussain.smell);
+console.log(gwen.smell);
+console.log(human.smell);
+
+///// Fun Fact: __proto__ vs. prototype =>
+
+function Donut() {
+  return { shape: "round" };
+}
+// let donut = Donut();
+
+// now i have prototype with some shared method
+let donutProto = {
+  eat() {
+    console.log("Nom nom nom");
+  },
+};
+//// its gross to manually add __proto__
+let donut1 = Donut();
+donut1.__proto__ = donutProto;
+
+let donut2 = Donut();
+donut2.__proto__ = donutProto;
+
+donut1.eat();
+donut2.eat();
+
+//// as a shortcut adding .prototype on the function itself and
+//// adding new keyword before function calling would do it[attach the __proto__]
+
+Donut.prototype = {
+  eat() {
+    console.log("heh heh heh");
+  },
+};
+
+let donut3 = new Donut();
+let donut4 = new Donut();
+
+donut3.eat();
+donut4.eat();
