@@ -67,3 +67,21 @@ console.log(hussain2.teeth);
 // hasOwnProperty: built-in js function for checking if property has it's own property wire
 console.log(gwen2.hasOwnProperty("teeth"));
 console.log(hussain2.hasOwnProperty("teeth"));
+
+// assignment:
+let human3 = {
+  teeth: 32,
+};
+
+let gwen3 = {
+  __proto__: human3,
+  // note: no own teeth property
+};
+
+gwen3.teeth = 31;
+
+console.log(human3.teeth);
+console.log(gwen3.teeth);
+
+console.log(human3.hasOwnProperty);
+console.log(human3.toString);
