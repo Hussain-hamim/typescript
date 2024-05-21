@@ -85,3 +85,12 @@ console.log(gwen3.teeth);
 
 console.log(human3.hasOwnProperty);
 console.log(human3.toString);
+
+// an object with no prototype:
+let weirdo = {
+  __proto__: null,
+};
+
+// this object doesn't even have it's built-in object method anymore
+console.log(weirdo.hasOwnProperty);
+console.log(weirdo.toString);
